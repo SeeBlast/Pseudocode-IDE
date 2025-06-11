@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flowchart Drag & Connect by Juan Sebastian Pinto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2 style="text-align:center; color:#39ff14;">Flowchart Editor (draw.io style, centered label, delete)</h2>
+
+<div id="palette">
+    <div draggable="true" class="figure" data-type="startend">
+        <svg width="90" height="40">
+            <ellipse cx="45" cy="20" rx="40" ry="18" fill="#80deea" stroke="#222" stroke-width="2"/>
+        </svg>
+        <div style="color:#222; font-size:13px; text-align:center;">Start/End</div>
+    </div>
+    <div draggable="true" class="figure" data-type="io">
+        <svg width="90" height="40">
+            <polygon points="10,5 80,5 70,35 20,35" fill="#ffcc80" stroke="#222" stroke-width="2"/>
+        </svg>
+        <div style="color:#222; font-size:13px; text-align:center;">Input/Output</div>
+    </div>
+    <div draggable="true" class="figure" data-type="process">
+        <svg width="90" height="40">
+            <rect x="10" y="5" width="70" height="30" rx="4" fill="#aed581" stroke="#222" stroke-width="2"/>
+        </svg>
+        <div style="color:#222; font-size:13px; text-align:center;">Process</div>
+    </div>
+    <div draggable="true" class="figure" data-type="decision">
+        <svg width="90" height="40">
+            <polygon points="45,5 85,20 45,35 5,20" fill="#b39ddb" stroke="#222" stroke-width="2"/>
+        </svg>
+        <div style="color:#222; font-size:13px; text-align:center;">Decision</div>
+    </div>
+</div>
+
+<div id="canvas-container" style="position:relative;">
+    <div id="canvas">
+        <svg id="arrows"></svg>
+    </div>
+    <button id="delete-arrow-btn" onclick="deleteSelectedArrow()">Delete arrow</button>
+</div>
+
+<button onclick="generateCode()">Generate Pseudocode</button>
+<textarea id="code" readonly placeholder="Pseudocode will appear here..."></textarea>
+
+<script src="main.js"></script>
+</body>
+</html>
